@@ -1,0 +1,781 @@
+{
+  "info": {
+    "_postman_id": "2ff87394-62d2-4ab4-99d2-0ea7644e26e8",
+    "name": "SCTP AIE M3 - Assignment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "13967603"
+  },
+  "item": [
+    {
+      "name": "Get all tasks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/tasks",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "tasks"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 10 Sep 2026 01:49:08 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"title\": \"Refactor task manager service\",\n        \"description\": \"Team has decide to code to an interface for the service component.\",\n        \"priority\": \"MEDIUM\",\n        \"completed\": false\n    },\n    {\n        \"id\": 2,\n        \"title\": \"Resolve bug in authentication module\",\n        \"description\": \"Unexpected error occurs when user tries to login with valid credentials.\",\n        \"priority\": \"HIGH\",\n        \"completed\": false\n    },\n    {\n        \"id\": 3,\n        \"title\": \"Update project documentation\",\n        \"description\": \"Ensure that the project documentation is up-to-date with the latest changes.\",\n        \"priority\": \"LOW\",\n        \"completed\": false\n    },\n    {\n        \"id\": 4,\n        \"title\": \"Backlog grooming\",\n        \"description\": \"Review and prioritize tasks in the backlog for the upcoming sprint.\",\n        \"priority\": \"MEDIUM\",\n        \"completed\": false\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Get task by id",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/tasks/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/tasks/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "tasks",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 10 Sep 2026 01:49:51 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 2,\n    \"title\": \"Resolve bug in authentication module\",\n    \"description\": \"Unexpected error occurs when user tries to login with valid credentials.\",\n    \"priority\": \"HIGH\",\n    \"completed\": false\n}"
+        },
+        {
+          "name": "404 - Not Found",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/tasks/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "tasks",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "7"
+                }
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Length",
+              "value": "0"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 10 Sep 2026 01:50:25 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "Create task",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Migrate database to new server\",\r\n    \"description\": \"Move the existing database to a new server for better performance and scalability.\",\r\n    \"priority\": \"HIGH\",\r\n    \"completed\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "201 - Created",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Migrate database to new server\",\r\n    \"description\": \"Move the existing database to a new server for better performance and scalability.\",\r\n    \"priority\": \"HIGH\",\r\n    \"completed\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/tasks",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "tasks"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 10 Sep 2026 01:54:32 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 6,\n    \"title\": \"Migrate database to new server\",\n    \"description\": \"Move the existing database to a new server for better performance and scalability.\",\n    \"priority\": \"HIGH\",\n    \"completed\": false\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update task by id",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Resolve bug in authentication module\",\r\n    \"description\": \"Unexpected error occurs when user tries to login with valid credentials.\",\r\n    \"priority\": \"LOW\",\r\n    \"completed\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/tasks/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Resolve bug in authentication module\",\r\n    \"description\": \"Unexpected error occurs when user tries to login with valid credentials.\",\r\n    \"priority\": \"LOW\",\r\n    \"completed\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/tasks/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "tasks",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 10 Sep 2026 01:58:33 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 2,\n    \"title\": \"Resolve bug in authentication module\",\n    \"description\": \"Unexpected error occurs when user tries to login with valid credentials.\",\n    \"priority\": \"LOW\",\n    \"completed\": false\n}"
+        },
+        {
+          "name": "404 - Not Found",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Resolve bug in authentication module\",\r\n    \"description\": \"Unexpected error occurs when user tries to login with valid credentials.\",\r\n    \"priority\": \"LOW\",\r\n    \"completed\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/tasks/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "tasks",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "9"
+                }
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Length",
+              "value": "0"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 10 Sep 2026 01:59:00 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "Mark task as complete ",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/tasks/:id/complete",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            ":id",
+            "complete"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/tasks/:id/complete",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "tasks",
+                ":id",
+                "complete"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 10 Sep 2026 02:00:11 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 2,\n    \"title\": \"Resolve bug in authentication module\",\n    \"description\": \"Unexpected error occurs when user tries to login with valid credentials.\",\n    \"priority\": \"LOW\",\n    \"completed\": true\n}"
+        },
+        {
+          "name": "404 - Not Found",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/tasks/:id/complete",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "tasks",
+                ":id",
+                "complete"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "7"
+                }
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Length",
+              "value": "0"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 10 Sep 2026 02:00:41 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "Delete task by id",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/tasks/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/tasks/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "tasks",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 10 Sep 2026 02:04:41 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 2,\n    \"title\": \"Resolve bug in authentication module\",\n    \"description\": \"Unexpected error occurs when user tries to login with valid credentials.\",\n    \"priority\": \"HIGH\",\n    \"completed\": false\n}"
+        },
+        {
+          "name": "404 - Not Found",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/tasks/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "tasks",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "9"
+                }
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Length",
+              "value": "0"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 10 Sep 2026 02:04:57 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "Summarize tasks",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/tasks/summarize",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            "summarize"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/tasks/summarize",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "tasks",
+                "summarize"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain;charset=UTF-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1799"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 10 Sep 2026 07:44:39 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "### Task Summary and Prioritization\n\nYou have four tasks currently on your plate, which can be categorized by urgency and importance:\n\n1. **Resolve bug in authentication module**  \n   - **Description:** Unexpected error occurs when users try to log in with valid credentials.  \n   - **Priority:** HIGH  \n   - **Status:** Incomplete  \n   - **Action:** Address this issue first, as it directly affects user access and experience.\n\n2. **Refactor task manager service**  \n   - **Description:** Team has decided to code to an interface for the service component.  \n   - **Priority:** MEDIUM  \n   - **Status:** Incomplete  \n   - **Action:** Schedule this task after resolving the authentication bug to improve the service's architecture.\n\n3. **Backlog grooming**  \n   - **Description:** Review and prioritize tasks in the backlog for the upcoming sprint.  \n   - **Priority:** MEDIUM  \n   - **Status:** Incomplete  \n   - **Action:** Conduct this task after the refactoring work to ensure that the backlog reflects any changes made.\n\n4. **Update project documentation**  \n   - **Description:** Ensure that the project documentation is up-to-date with the latest changes.  \n   - **Priority:** LOW  \n   - **Status:** Incomplete  \n   - **Action:** This task can be deferred until the higher-priority tasks are completed, as it does not impact immediate project functionality.\n\n### Recommendations:\n- **Immediate Focus:** Start with the authentication bug due to its high priority.\n- **Next Steps:** Move on to refactoring the task manager service, followed by backlog grooming.\n- **Documentation Update:** Plan to finalize the project documentation last, ensuring it accurately reflects recent changes after the other tasks are completed. \n\nKeep track of your progress and adjust priorities if new tasks arise."
+        }
+      ]
+    }
+  ]
+}
