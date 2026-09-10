@@ -28,4 +28,9 @@ You can download the collection and import it into Postman for testing.
 
 <img src="./src/main/resources/static/images/postman-import-select-file.png" style="width: 50%; height: auto;" alt="Postman import select file">
 
+## Testing APIs
+
+The endpoints have been deployed **live** on [Render.com](https://render.com/) at the base url https://sctp-aie-m3-assignment.onrender.com/api/tasks.
+
+> The base url is defined in a collection variable `{{url}}` in the postman collection. 
 

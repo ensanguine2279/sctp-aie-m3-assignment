@@ -12,15 +12,9 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:8080/api/tasks",
-          "protocol": "http",
+          "raw": "{{url}}",
           "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "tasks"
+            "{{url}}"
           ]
         }
       },
@@ -31,15 +25,9 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/tasks",
-              "protocol": "http",
+              "raw": "{{url}}",
               "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "tasks"
+                "{{url}}"
               ]
             }
           },
@@ -47,6 +35,10 @@
           "code": 200,
           "_postman_previewlanguage": null,
           "header": [
+            {
+              "key": "Date",
+              "value": "Thu, 10 Sep 2026 16:02:30 GMT"
+            },
             {
               "key": "Content-Type",
               "value": "application/json"
@@ -56,16 +48,40 @@
               "value": "chunked"
             },
             {
-              "key": "Date",
-              "value": "Thu, 10 Sep 2026 01:49:08 GMT"
-            },
-            {
-              "key": "Keep-Alive",
-              "value": "timeout=60"
-            },
-            {
               "key": "Connection",
               "value": "keep-alive"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "c833b89b-7b1c-4b5a"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "a38fa84d6c753df5-SIN"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
             }
           ],
           "cookie": [],
@@ -82,15 +98,11 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:8080/api/tasks/:id",
-          "protocol": "http",
+          "raw": "{{url}}/:id",
           "host": [
-            "localhost"
+            "{{url}}"
           ],
-          "port": "8080",
           "path": [
-            "api",
-            "tasks",
             ":id"
           ],
           "variable": [
@@ -108,15 +120,11 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/tasks/:id",
-              "protocol": "http",
+              "raw": "{{url}}/:id",
               "host": [
-                "localhost"
+                "{{url}}"
               ],
-              "port": "8080",
               "path": [
-                "api",
-                "tasks",
                 ":id"
               ],
               "variable": [
@@ -132,6 +140,10 @@
           "_postman_previewlanguage": null,
           "header": [
             {
+              "key": "Date",
+              "value": "Thu, 10 Sep 2026 16:03:59 GMT"
+            },
+            {
               "key": "Content-Type",
               "value": "application/json"
             },
@@ -140,16 +152,40 @@
               "value": "chunked"
             },
             {
-              "key": "Date",
-              "value": "Thu, 10 Sep 2026 01:49:51 GMT"
-            },
-            {
-              "key": "Keep-Alive",
-              "value": "timeout=60"
-            },
-            {
               "key": "Connection",
               "value": "keep-alive"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "d58f4062-9e26-467d"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "a38faa761bcde299-SIN"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
             }
           ],
           "cookie": [],
@@ -161,15 +197,11 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/tasks/:id",
-              "protocol": "http",
+              "raw": "{{url}}/:id",
               "host": [
-                "localhost"
+                "{{url}}"
               ],
-              "port": "8080",
               "path": [
-                "api",
-                "tasks",
                 ":id"
               ],
               "variable": [
@@ -215,15 +247,11 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:8080/api/tasks/summarize",
-          "protocol": "http",
+          "raw": "{{url}}/summarize",
           "host": [
-            "localhost"
+            "{{url}}"
           ],
-          "port": "8080",
           "path": [
-            "api",
-            "tasks",
             "summarize"
           ]
         }
@@ -235,15 +263,11 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/tasks/summarize",
-              "protocol": "http",
+              "raw": "{{url}}/summarize",
               "host": [
-                "localhost"
+                "{{url}}"
               ],
-              "port": "8080",
               "path": [
-                "api",
-                "tasks",
                 "summarize"
               ]
             }
@@ -296,15 +320,9 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8080/api/tasks",
-          "protocol": "http",
+          "raw": "{{url}}",
           "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "tasks"
+            "{{url}}"
           ]
         }
       },
@@ -324,15 +342,9 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/api/tasks",
-              "protocol": "http",
+              "raw": "{{url}}",
               "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "tasks"
+                "{{url}}"
               ]
             }
           },
@@ -384,15 +396,11 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8080/api/tasks/:id",
-          "protocol": "http",
+          "raw": "{{url}}/:id",
           "host": [
-            "localhost"
+            "{{url}}"
           ],
-          "port": "8080",
           "path": [
-            "api",
-            "tasks",
             ":id"
           ],
           "variable": [
@@ -419,15 +427,11 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/api/tasks/:id",
-              "protocol": "http",
+              "raw": "{{url}}/:id",
               "host": [
-                "localhost"
+                "{{url}}"
               ],
-              "port": "8080",
               "path": [
-                "api",
-                "tasks",
                 ":id"
               ],
               "variable": [
@@ -481,15 +485,11 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/api/tasks/:id",
-              "protocol": "http",
+              "raw": "{{url}}/:id",
               "host": [
-                "localhost"
+                "{{url}}"
               ],
-              "port": "8080",
               "path": [
-                "api",
-                "tasks",
                 ":id"
               ],
               "variable": [
@@ -535,15 +535,11 @@
         "method": "PUT",
         "header": [],
         "url": {
-          "raw": "http://localhost:8080/api/tasks/:id/complete",
-          "protocol": "http",
+          "raw": "{{url}}/:id/complete",
           "host": [
-            "localhost"
+            "{{url}}"
           ],
-          "port": "8080",
           "path": [
-            "api",
-            "tasks",
             ":id",
             "complete"
           ],
@@ -562,15 +558,11 @@
             "method": "PUT",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/tasks/:id/complete",
-              "protocol": "http",
+              "raw": "{{url}}/:id/complete",
               "host": [
-                "localhost"
+                "{{url}}"
               ],
-              "port": "8080",
               "path": [
-                "api",
-                "tasks",
                 ":id",
                 "complete"
               ],
@@ -616,15 +608,11 @@
             "method": "PUT",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/tasks/:id/complete",
-              "protocol": "http",
+              "raw": "{{url}}/:id/complete",
               "host": [
-                "localhost"
+                "{{url}}"
               ],
-              "port": "8080",
               "path": [
-                "api",
-                "tasks",
                 ":id",
                 "complete"
               ],
@@ -671,21 +659,17 @@
         "method": "DELETE",
         "header": [],
         "url": {
-          "raw": "http://localhost:8080/api/tasks/:id",
-          "protocol": "http",
+          "raw": "{{url}}/:id",
           "host": [
-            "localhost"
+            "{{url}}"
           ],
-          "port": "8080",
           "path": [
-            "api",
-            "tasks",
             ":id"
           ],
           "variable": [
             {
               "key": "id",
-              "value": "2"
+              "value": "6"
             }
           ]
         }
@@ -697,15 +681,11 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/tasks/:id",
-              "protocol": "http",
+              "raw": "{{url}}/:id",
               "host": [
-                "localhost"
+                "{{url}}"
               ],
-              "port": "8080",
               "path": [
-                "api",
-                "tasks",
                 ":id"
               ],
               "variable": [
@@ -750,15 +730,11 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/tasks/:id",
-              "protocol": "http",
+              "raw": "{{url}}/:id",
               "host": [
-                "localhost"
+                "{{url}}"
               ],
-              "port": "8080",
               "path": [
-                "api",
-                "tasks",
                 ":id"
               ],
               "variable": [
@@ -794,6 +770,36 @@
           "body": null
         }
       ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "url",
+      "value": "https://sctp-aie-m3-assignment.onrender.com/api/tasks"
     }
   ]
 }
