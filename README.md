@@ -34,8 +34,7 @@ The endpoints have been deployed **live** on [Render](https://render.com/) free 
 
 You can test the APIs from the base url https://sctp-aie-m3-assignment.onrender.com/api/tasks.  
 
-> Postman Collection Variable
-The base url is defined in the collection variable `{{url}}` in the postman collection. If you were to deploy the APIs into another local/cloud environment/platform, you will need to update the value of the `{{url}}` variable  
+> **Postman Collection Variable**: The base url is defined in the collection variable `{{url}}` in the postman collection. If you were to deploy the APIs into another local/cloud environment/platform, you will need to update the value of the `{{url}}` variable  
 
 > Free Tier Inactivity Note
 Note that Render spins down free-tier web services after 15 minutes of inactivity. A new incoming request will experience a "cold start" delay of about 30–50 seconds while the instance wakes back up.
