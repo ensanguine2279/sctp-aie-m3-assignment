@@ -12,13 +12,14 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:8080/tasks",
+          "raw": "http://localhost:8080/api/tasks",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
+            "api",
             "tasks"
           ]
         }
@@ -30,13 +31,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/tasks",
+              "raw": "http://localhost:8080/api/tasks",
               "protocol": "http",
               "host": [
                 "localhost"
               ],
               "port": "8080",
               "path": [
+                "api",
                 "tasks"
               ]
             }
@@ -80,13 +82,14 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:8080/tasks/:id",
+          "raw": "http://localhost:8080/api/tasks/:id",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
+            "api",
             "tasks",
             ":id"
           ],
@@ -105,13 +108,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/tasks/:id",
+              "raw": "http://localhost:8080/api/tasks/:id",
               "protocol": "http",
               "host": [
                 "localhost"
               ],
               "port": "8080",
               "path": [
+                "api",
                 "tasks",
                 ":id"
               ],
@@ -157,13 +161,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/tasks/:id",
+              "raw": "http://localhost:8080/api/tasks/:id",
               "protocol": "http",
               "host": [
                 "localhost"
               ],
               "port": "8080",
               "path": [
+                "api",
                 "tasks",
                 ":id"
               ],
@@ -202,6 +207,78 @@
       ]
     },
     {
+      "name": "Summarize tasks",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/tasks/summarize",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tasks",
+            "summarize"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/tasks/summarize",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tasks",
+                "summarize"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain;charset=UTF-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1799"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 10 Sep 2026 07:44:39 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "### Task Summary and Prioritization\n\nYou have four tasks currently on your plate, which can be categorized by urgency and importance:\n\n1. **Resolve bug in authentication module**  \n   - **Description:** Unexpected error occurs when users try to log in with valid credentials.  \n   - **Priority:** HIGH  \n   - **Status:** Incomplete  \n   - **Action:** Address this issue first, as it directly affects user access and experience.\n\n2. **Refactor task manager service**  \n   - **Description:** Team has decided to code to an interface for the service component.  \n   - **Priority:** MEDIUM  \n   - **Status:** Incomplete  \n   - **Action:** Schedule this task after resolving the authentication bug to improve the service's architecture.\n\n3. **Backlog grooming**  \n   - **Description:** Review and prioritize tasks in the backlog for the upcoming sprint.  \n   - **Priority:** MEDIUM  \n   - **Status:** Incomplete  \n   - **Action:** Conduct this task after the refactoring work to ensure that the backlog reflects any changes made.\n\n4. **Update project documentation**  \n   - **Description:** Ensure that the project documentation is up-to-date with the latest changes.  \n   - **Priority:** LOW  \n   - **Status:** Incomplete  \n   - **Action:** This task can be deferred until the higher-priority tasks are completed, as it does not impact immediate project functionality.\n\n### Recommendations:\n- **Immediate Focus:** Start with the authentication bug due to its high priority.\n- **Next Steps:** Move on to refactoring the task manager service, followed by backlog grooming.\n- **Documentation Update:** Plan to finalize the project documentation last, ensuring it accurately reflects recent changes after the other tasks are completed. \n\nKeep track of your progress and adjust priorities if new tasks arise."
+        }
+      ]
+    },
+    {
       "name": "Create task",
       "request": {
         "auth": {
@@ -219,13 +296,14 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8080/tasks",
+          "raw": "http://localhost:8080/api/tasks",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
+            "api",
             "tasks"
           ]
         }
@@ -246,13 +324,14 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/tasks",
+              "raw": "http://localhost:8080/api/tasks",
               "protocol": "http",
               "host": [
                 "localhost"
               ],
               "port": "8080",
               "path": [
+                "api",
                 "tasks"
               ]
             }
@@ -305,13 +384,14 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8080/tasks/:id",
+          "raw": "http://localhost:8080/api/tasks/:id",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
+            "api",
             "tasks",
             ":id"
           ],
@@ -339,13 +419,14 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/tasks/:id",
+              "raw": "http://localhost:8080/api/tasks/:id",
               "protocol": "http",
               "host": [
                 "localhost"
               ],
               "port": "8080",
               "path": [
+                "api",
                 "tasks",
                 ":id"
               ],
@@ -400,13 +481,14 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/tasks/:id",
+              "raw": "http://localhost:8080/api/tasks/:id",
               "protocol": "http",
               "host": [
                 "localhost"
               ],
               "port": "8080",
               "path": [
+                "api",
                 "tasks",
                 ":id"
               ],
@@ -453,13 +535,14 @@
         "method": "PUT",
         "header": [],
         "url": {
-          "raw": "http://localhost:8080/tasks/:id/complete",
+          "raw": "http://localhost:8080/api/tasks/:id/complete",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
+            "api",
             "tasks",
             ":id",
             "complete"
@@ -479,13 +562,14 @@
             "method": "PUT",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/tasks/:id/complete",
+              "raw": "http://localhost:8080/api/tasks/:id/complete",
               "protocol": "http",
               "host": [
                 "localhost"
               ],
               "port": "8080",
               "path": [
+                "api",
                 "tasks",
                 ":id",
                 "complete"
@@ -532,13 +616,14 @@
             "method": "PUT",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/tasks/:id/complete",
+              "raw": "http://localhost:8080/api/tasks/:id/complete",
               "protocol": "http",
               "host": [
                 "localhost"
               ],
               "port": "8080",
               "path": [
+                "api",
                 "tasks",
                 ":id",
                 "complete"
@@ -586,13 +671,14 @@
         "method": "DELETE",
         "header": [],
         "url": {
-          "raw": "http://localhost:8080/tasks/:id",
+          "raw": "http://localhost:8080/api/tasks/:id",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
+            "api",
             "tasks",
             ":id"
           ],
@@ -611,13 +697,14 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/tasks/:id",
+              "raw": "http://localhost:8080/api/tasks/:id",
               "protocol": "http",
               "host": [
                 "localhost"
               ],
               "port": "8080",
               "path": [
+                "api",
                 "tasks",
                 ":id"
               ],
@@ -663,13 +750,14 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/tasks/:id",
+              "raw": "http://localhost:8080/api/tasks/:id",
               "protocol": "http",
               "host": [
                 "localhost"
               ],
               "port": "8080",
               "path": [
+                "api",
                 "tasks",
                 ":id"
               ],
@@ -704,76 +792,6 @@
           ],
           "cookie": [],
           "body": null
-        }
-      ]
-    },
-    {
-      "name": "Summarize tasks",
-      "request": {
-        "auth": {
-          "type": "noauth"
-        },
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:8080/tasks/summarize",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "tasks",
-            "summarize"
-          ]
-        }
-      },
-      "response": [
-        {
-          "name": "200 - Ok",
-          "originalRequest": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "http://localhost:8080/tasks/summarize",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "tasks",
-                "summarize"
-              ]
-            }
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": null,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain;charset=UTF-8"
-            },
-            {
-              "key": "Content-Length",
-              "value": "1799"
-            },
-            {
-              "key": "Date",
-              "value": "Thu, 10 Sep 2026 07:44:39 GMT"
-            },
-            {
-              "key": "Keep-Alive",
-              "value": "timeout=60"
-            },
-            {
-              "key": "Connection",
-              "value": "keep-alive"
-            }
-          ],
-          "cookie": [],
-          "body": "### Task Summary and Prioritization\n\nYou have four tasks currently on your plate, which can be categorized by urgency and importance:\n\n1. **Resolve bug in authentication module**  \n   - **Description:** Unexpected error occurs when users try to log in with valid credentials.  \n   - **Priority:** HIGH  \n   - **Status:** Incomplete  \n   - **Action:** Address this issue first, as it directly affects user access and experience.\n\n2. **Refactor task manager service**  \n   - **Description:** Team has decided to code to an interface for the service component.  \n   - **Priority:** MEDIUM  \n   - **Status:** Incomplete  \n   - **Action:** Schedule this task after resolving the authentication bug to improve the service's architecture.\n\n3. **Backlog grooming**  \n   - **Description:** Review and prioritize tasks in the backlog for the upcoming sprint.  \n   - **Priority:** MEDIUM  \n   - **Status:** Incomplete  \n   - **Action:** Conduct this task after the refactoring work to ensure that the backlog reflects any changes made.\n\n4. **Update project documentation**  \n   - **Description:** Ensure that the project documentation is up-to-date with the latest changes.  \n   - **Priority:** LOW  \n   - **Status:** Incomplete  \n   - **Action:** This task can be deferred until the higher-priority tasks are completed, as it does not impact immediate project functionality.\n\n### Recommendations:\n- **Immediate Focus:** Start with the authentication bug due to its high priority.\n- **Next Steps:** Move on to refactoring the task manager service, followed by backlog grooming.\n- **Documentation Update:** Plan to finalize the project documentation last, ensuring it accurately reflects recent changes after the other tasks are completed. \n\nKeep track of your progress and adjust priorities if new tasks arise."
         }
       ]
     }

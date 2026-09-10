@@ -10,6 +10,7 @@ Click [here](./Module3_Assignment_mandatory.md) for the assignment details & req
 |---|---|---|
 |GET|`/api/tasks`|Get all tasks|
 |GET|`/api/tasks/{id}`|Get one task by id|
+|GET|`/api/tasks/summarize`|Summarize all tasks|
 |POST|`/api/tasks`|Create a new task|
 |PUT|`/api/tasks/{id}`|Update an existng task|
 |DELETE|`/api/tasks/{id}`|Delete a task|

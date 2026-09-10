@@ -2,7 +2,6 @@ package sg.edu.ntu.taskflow_api.controller;
 
 import java.util.List;
 
-import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +19,7 @@ import sg.edu.ntu.taskflow_api.service.TaskService;
 import sg.edu.ntu.taskflow_api.service.AiService;
 
 @RestController
-@RequestMapping("/tasks")
+@RequestMapping("/api/tasks")
 public class TaskController {
 
     private final TaskService taskService;
