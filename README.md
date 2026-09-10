@@ -6,5 +6,11 @@ Click [here](./Module3_Assignment_mandatory.md) for the assignment details & req
 
 ## API documentation
 
-Click [here](./SCTP%20AIE%20M3%20-%20Assignment.postman_collection.json) to download the Postman collection of the API endpoints. 
+Click [here](./SCTP%20AIE%20M3%20-%20Assignment.postman_collection.json) for the Postman collection of the API endpoints. 
+
+You can download the collection and import it into Postman for testing.
+
+![Postman import button](./src/main/resources/static/images/postman-import.png)
+
+![Postman import select file](./src/main/resources/static/images/postman-import-select-file.png)
 
