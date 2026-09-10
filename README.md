@@ -10,7 +10,9 @@ Click [here](./SCTP%20AIE%20M3%20-%20Assignment.postman_collection.json) for the
 
 You can download the collection and import it into Postman for testing.
 
+<br?>
 ![Postman import button](./src/main/resources/static/images/postman-import.png)
 
+<br/>
 ![Postman import select file](./src/main/resources/static/images/postman-import-select-file.png)
 
