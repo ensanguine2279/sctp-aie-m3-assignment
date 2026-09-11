@@ -113,4 +113,4 @@ The [Dockerfile](./Dockerfile) is essential in the deployment process on Render.
 
 `EXPOSE 10000`: Exposes that the containerized application on port 10000.
 
-`ENTRYPOINT ["java", "-jar", "app.jar"]`: Defines the default command that runs when the container starts up, launching your Spring Boot app.
+`ENTRYPOINT ["java", "-jar", "app.jar"]`: Defines the default command that runs when the container starts up, launching the Spring Boot app.
