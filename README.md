@@ -104,3 +104,13 @@ The [Dockerfile](./Dockerfile) is essential in the deployment process on Render.
 
 `RUN ./mvnw clean package -DskipTests`: Uses the Maven wrapper to compile your code and build the executable JAR file. The -DskipTests flag skips running unit tests to speed up the container build process.
 
+### Stage 2: The Production Runtime
+`FROM eclipse-temurin:21-jre-alpine`: Starts a completely fresh, minimal image using only the Java 21 JRE (Java Runtime Environment). Because it doesn't need compiler tools, this image is much smaller and more secure for production.
+
+`WORKDIR /app`: Sets the working directory in this final runtime image to /app.
+
+`COPY --from=build /app/target/*.jar app.jar`: Grabs only the compiled .jar file from the first build stage and copies it into this clean runtime image, naming it app.jar.
+
+`EXPOSE 10000`: Exposes that the containerized application on port 10000.
+
+`ENTRYPOINT ["java", "-jar", "app.jar"]`: Defines the default command that runs when the container starts up, launching your Spring Boot app.
