@@ -15,8 +15,9 @@ Click [here](./Module3_Assignment_mandatory.md) for the assignment details & req
 |GET|`/api/tasks/summarize`|Summarize all tasks|
 |POST|`/api/tasks`|Create a new task|
 |PUT|`/api/tasks/{id}`|Update an existng task|
-|DELETE|`/api/tasks/{id}`|Delete a task|
 |PUT|`/api/tasks/{id}/`<br>`complete`|Mark a task as complete|
+|DELETE|`/api/tasks/{id}`|Delete a task|
+
 
 Click [here](./SCTP%20AIE%20M3%20-%20Assignment.postman_collection.json) for the Postman collection of the API endpoints. 
 
@@ -44,7 +45,11 @@ You can test the APIs from the base url https://sctp-aie-m3-assignment.onrender.
 
 ## Configuring the APIs
 
-### LLM model
+### LLM model settings
+
+You can configure the model used for summarizing tasks and the associated temperature hyperparameter using the following settings in the [application.properties](./src/main/resources/application.properties).
+
+> *Never* expose your API key: You should not hardcode your API key in the `application.properties`. Always inject the key as an environment variable in the hosting environment.  Spring Boot will derive the value of `${OPENAI_API_KEY}` and set the property during runtime.
 
 ``` yaml
 spring.ai.openai.api-key=${OPENAI_API_KEY}
