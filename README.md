@@ -59,11 +59,11 @@ spring.ai.openai.chat.temperature=0.7
 
 ### System prompt settings
 
-You can refine and update the structure of the system prompt with these four properties to enhance responses from the model to deliver a precise, targeted summary.
+Refine and update the components of the system prompt with these four properties to enhance responses from the model to deliver a precise, targeted summary.
 
-– Role: Defining who or what persona the AI should embody (e.g., "Act as a senior software architect").
+- Role: Defining who or what persona the AI should embody (e.g., "Act as a senior software architect").
 
-– Scenario/Situation: Setting the background, context, or environment (e.g., "You are reviewing a legacy microservice codebase facing high latency").
+- Scenario/Situation: Setting the background, context, or environment (e.g., "You are reviewing a legacy microservice codebase facing high latency").
 
 - Task: Clearly stating what specific action or output is expected (e.g., "Identify the top three performance bottlenecks").
 
@@ -74,5 +74,17 @@ spring.ai.taskflow.sysprompt.role=You are an expert task management...
 spring.ai.taskflow.sysprompt.scope=You help generate a plain-English...
 spring.ai.taskflow.sysprompt.tone=Maintain a helpful, analytical...
 spring.ai.taskflow.sysprompt.boundaries=Do not invent task details...
+```
+
+### Network port settings
+
+This property sets the exact network port the Spring Boot application listens on. 
+- `${PORT}` tells Spring Boot to check for the environment variable `PORT` injected by the hosting platform at startup and use it.
+-  `:10000` is the fallback default value. If no `PORT` variable is found it defaults to port 10000 (or whichever port specified).
+
+> Render's load balancer is configured to route external incoming requests from ports 80/443 to the internal container port of 10000.  This is the reason why this setting is necessary for the Spring Boot application to be accessible from public. 
+
+``` yaml
+server.port=${PORT:10000}
 ```
 
