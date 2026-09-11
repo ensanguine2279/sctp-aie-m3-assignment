@@ -61,13 +61,13 @@ spring.ai.openai.chat.temperature=0.7
 
 Refine and update the components of the system prompt with these four properties (in [application.properties](./src/main/resources/application.properties)) to enhance responses from the model to deliver a precise, targeted summary.
 
-- Role: Defining who or what persona the AI should embody (e.g., "Act as a senior software architect").
+- Role: Define who or what persona the AI should embody (e.g., "Act as a senior software architect").
 
-- Scenario/Situation: Setting the background, context, or environment (e.g., "You are reviewing a legacy microservice codebase facing high latency").
+- Scope: Define the boundaries, domain, and limitations of what the AI is allowed to address.
 
-- Task: Clearly stating what specific action or output is expected (e.g., "Identify the top three performance bottlenecks").
+- Tone: Define the persona, voice, attitude, and emotional resonance of the AI's output. It dictates how the message feels to the reader, ensuring the delivery matches the intended audience and context.
 
-- Boundaries / Constraints: Establishing the rules, limits, or formatting requirements (e.g., "Keep the response under 200 words and use a bulleted list").
+- Boundaries/Constraints: Establish the rules, limits, or formatting requirements (e.g., "Keep the response under 200 words and use a bulleted list").
 
 ``` yaml
 spring.ai.taskflow.sysprompt.role=You are an expert task management... 
