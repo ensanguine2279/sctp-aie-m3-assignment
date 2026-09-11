@@ -2,6 +2,8 @@
 
 ## About the assignment
 
+The assignment is to build a simple TaskFlow API, a task management layered backend, using Spring Boot project,  and push it to [GitHub](https://github.com/ensanguine2279/sctp-aie-m3-assignment/tree/main).
+
 Click [here](./Module3_Assignment_mandatory.md) for the assignment details & requirements.
 
 ## API documentation
@@ -40,3 +42,12 @@ You can test the APIs from the base url https://sctp-aie-m3-assignment.onrender.
 
 > **Free Tier Inactivity**: Note that Render spins down free-tier web services after 15 minutes of inactivity. A new incoming request will experience a "cold start" delay of about 30–50 seconds while the instance wakes back up.
 
+## Configuring the APIs
+
+### LLM model
+
+``` yaml
+spring.ai.openai.api-key=${OPENAI_API_KEY}
+spring.ai.openai.chat.model=gpt-4o-mini
+spring.ai.openai.chat.temperature=0.7
+```
