@@ -59,7 +59,7 @@ spring.ai.openai.chat.temperature=0.7
 
 ### System prompt settings
 
-Refine and update the components of the system prompt with these four properties to enhance responses from the model to deliver a precise, targeted summary.
+Refine and update the components of the system prompt with these four properties (in [application.properties](./src/main/resources/application.properties)) to enhance responses from the model to deliver a precise, targeted summary.
 
 - Role: Defining who or what persona the AI should embody (e.g., "Act as a senior software architect").
 
