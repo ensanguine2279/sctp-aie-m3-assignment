@@ -88,3 +88,19 @@ This property sets the exact network port the Spring Boot application listens on
 server.port=${PORT:10000}
 ```
 
+Should you decide to deploy on another cloud host other than Render, the port settings will be different.  Consult the provider's documentation for the correct porting number to use.
+
+## Deploying the APIs (on Render)
+
+The [Dockerfile](./Dockerfile) is essential in the deployment process on Render.  It defines a multi-stage Docker build designed to compile the Spring Boot project and package it into a lightweight, secure production image.
+
+### Stage 1: The Build Environment
+
+`FROM eclipse-temurin:21-jdk-alpine AS build`: Pulls a lightweight Alpine Linux image containing the Java 21 JDK (Java Development Kit, which includes the compiler needed to build code) and names this first stage build.
+
+`WORKDIR /app`: Sets the working directory inside the container to /app.
+
+`COPY . .`: Copies all your project source files and code from your computer into the container's /app folder.
+
+`RUN ./mvnw clean package -DskipTests`: Uses the Maven wrapper to compile your code and build the executable JAR file. The -DskipTests flag skips running unit tests to speed up the container build process.
+
