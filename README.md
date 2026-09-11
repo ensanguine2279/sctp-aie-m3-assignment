@@ -49,10 +49,30 @@ You can test the APIs from the base url https://sctp-aie-m3-assignment.onrender.
 
 You can configure the model used for summarizing tasks and the associated temperature hyperparameter using the following settings in the [application.properties](./src/main/resources/application.properties).
 
-> *Never* expose your API key: You should not hardcode your API key in the `application.properties`. Always inject the key as an environment variable in the hosting environment.  Spring Boot will derive the value of `${OPENAI_API_KEY}` and set the property during runtime.
+> **Never expose your API key**: You should not hardcode your API key in the `application.properties`. Always inject the key as an environment variable in the hosting environment.  Spring Boot will derive the value of `${OPENAI_API_KEY}` and set the property during runtime.
 
 ``` yaml
 spring.ai.openai.api-key=${OPENAI_API_KEY}
 spring.ai.openai.chat.model=gpt-4o-mini
 spring.ai.openai.chat.temperature=0.7
 ```
+
+### System prompt settings
+
+You can refine and update the structure of the system prompt with these four properties to enhance responses from the model to deliver a precise, targeted summary.
+
+– Role: Defining who or what persona the AI should embody (e.g., "Act as a senior software architect").
+
+– Scenario/Situation: Setting the background, context, or environment (e.g., "You are reviewing a legacy microservice codebase facing high latency").
+
+- Task: Clearly stating what specific action or output is expected (e.g., "Identify the top three performance bottlenecks").
+
+- Boundaries / Constraints: Establishing the rules, limits, or formatting requirements (e.g., "Keep the response under 200 words and use a bulleted list").
+
+``` yaml
+spring.ai.taskflow.sysprompt.role=You are an expert task management... 
+spring.ai.taskflow.sysprompt.scope=You help generate a plain-English...
+spring.ai.taskflow.sysprompt.tone=Maintain a helpful, analytical...
+spring.ai.taskflow.sysprompt.boundaries=Do not invent task details...
+```
+
