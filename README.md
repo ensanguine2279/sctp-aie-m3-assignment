@@ -114,3 +114,93 @@ The [Dockerfile](./Dockerfile) is essential in the deployment process on Render.
 `EXPOSE 10000`: Exposes that the containerized application on port 10000.
 
 `ENTRYPOINT ["java", "-jar", "app.jar"]`: Defines the default command that runs when the container starts up, launching the Spring Boot app.
+
+## Architecture Overview
+
+- **Controller Layer** (`sg.edu.ntu.taskflow_api.controller`): `TaskController` handles incoming HTTP requests, delegating core business logic execution to the service layer.
+
+- **Service Layer** (`sg.edu.ntu.taskflow_api.service`): Contains `TaskService` and `AiService` interfaces alongside their implementations (TaskServiceImpl, AiServiceImpl) to manage task rules and external AI interactions.
+
+- **Repository Layer** (`sg.edu.ntu.taskflow_api.repository`): `TaskRepository` extends Spring Data JPA to provide database operations for the `Task` entity.
+
+- **Model Layer** (`sg.edu.ntu.taskflow_api.model`): Consists of the `Task` entity and the `TaskPriority` enumeration.
+
+- **Exception Handling** (`sg.edu.ntu.taskflow_api.exception`): Custom runtime exceptions such as `TaskNotFoundException` handle invalid identifier lookups uniformly across controllers.
+
+### Class Diagram
+
+```mermaid
+classDiagram
+    direction TB
+
+    class TaskflowApiApplication {
+        +main(String[] args)
+    }
+
+    class TaskController {
+        -TaskService taskService
+        -AiService aiService
+        +getAllTasks()
+        +getTaskById(Long id)
+        +createTask(Task task)
+        +updateTask(Long id, Task task)
+        +deleteTask(Long id)
+    }
+
+    class TaskService {
+        <<interface>>
+        +getAllTasks()
+        +getTaskById(Long id)
+        +createTask(Task task)
+        +updateTask(Long id, Task task)
+        +deleteTask(Long id)
+    }
+
+    class TaskServiceImpl {
+        -TaskRepository taskRepository
+        +getAllTasks()
+        +getTaskById(Long id)
+        +createTask(Task task)
+        +updateTask(Long id, Task task)
+        +deleteTask(Long id)
+    }
+
+    class AiService {
+        <<interface>>
+    }
+
+    class AiServiceImpl {
+        -RestTemplate restTemplate / WebClient
+    }
+
+    class TaskRepository {
+        <<interface>>
+    }
+
+    class Task {
+        -Long id
+        -String title
+        -String description
+        -TaskPriority priority
+        -Boolean completed
+    }
+
+    class TaskPriority {
+        <<enumeration>>
+        LOW
+        MEDIUM
+        HIGH
+    }
+
+    class TaskNotFoundException {
+        +TaskNotFoundException(String message)
+    }
+
+    TaskController --> TaskService : injects
+    TaskController --> AiService : injects
+    TaskService <|.. TaskServiceImpl : implements
+    AiService <|.. AiServiceImpl : implements
+    TaskServiceImpl --> TaskRepository : injects
+    TaskRepository --> Task : manages entity
+    Task --> TaskPriority : uses
+    TaskServiceImpl ..> TaskNotFoundException : throws
