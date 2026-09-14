@@ -121,9 +121,9 @@ The [Dockerfile](./Dockerfile) is essential in the deployment process on Render.
 
 - **Service Layer** (`sg.edu.ntu.taskflow_api.service`): Contains `TaskService` and `AiService` interfaces alongside their implementations (TaskServiceImpl, AiServiceImpl) to manage task rules and external AI interactions.
 
-- **Repository Layer** (`sg.edu.ntu.taskflow_api.repository`): `TaskRepository` extends Spring Data JPA to provide database operations for the `Task` entity.
+- **Repository Layer** (`sg.edu.ntu.taskflow_api.repository`): `TaskRepository` simulates a Spring Data JPA repository to provide CRUD operations for the `Task` entity (using a `HashMap`).
 
-- **Model Layer** (`sg.edu.ntu.taskflow_api.model`): Consists of the `Task` entity and the `TaskPriority` enumeration.
+- **Model Layer** (`sg.edu.ntu.taskflow_api.model`): Consists of the `Task` class (acting as a JPA entity) and the `TaskPriority` enumeration.
 
 - **Exception Handling** (`sg.edu.ntu.taskflow_api.exception`): Custom runtime exceptions such as `TaskNotFoundException` handle invalid identifier lookups uniformly across controllers.
 
